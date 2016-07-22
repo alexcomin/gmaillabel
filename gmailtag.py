@@ -4,7 +4,7 @@ from time import sleep
 login = 'name@gmail.com'
 password = 'you_pass'
 
-label = 'CodeCademy'
+label = 'you_label'
 
 gmail = imaplib.IMAP4_SSL('imap.gmail.com', '993')
 gmail.login(login, password)
