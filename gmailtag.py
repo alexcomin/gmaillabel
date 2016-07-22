@@ -2,9 +2,9 @@ import imaplib
 from time import sleep
 
 login = 'name@gmail.com'
-password = 'you_pass'
+password = 'you_pas'
 
-label = 'you_label'
+labels = ['you_label', 'you_label', 'you_label']
 
 gmail = imaplib.IMAP4_SSL('imap.gmail.com', '993')
 gmail.login(login, password)
@@ -16,11 +16,14 @@ def write_file(name_file, arg):
 
 
 while True:
-    unseen = gmail.status(label, '(UNSEEN)')
-    parse = unseen[1][0].decode('utf-8')
-    parse = parse.replace('(','').replace(')','').split(' ')[2]
-    if (parse == '0'):
+    count = 0
+    for label in labels:
+        unseen = gmail.status(label, '(UNSEEN)')
+        parse = unseen[1][0].decode('utf-8')
+        parse = int(parse.replace('(','').replace(')','').split(' ')[2])
+        count += parse
+    if (count == 0):
         write_file('text.txt', '')
     else:
-        write_file('text.txt', parse)
+        write_file('text.txt', str(count))
     sleep(5.0)
