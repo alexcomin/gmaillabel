@@ -2,7 +2,7 @@ import imaplib
 from time import sleep
 
 login = 'name@gmail.com'
-password = 'you_pas'
+password = 'you_pass'
 
 labels = ['you_label', 'you_label', 'you_label']
 
