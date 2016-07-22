@@ -1,0 +1,24 @@
+{
+    "manifest_version": 2,
+
+    "name": "GmailTag",
+    "version": "1.0",
+
+    "icons": {
+        "16": "16x16.png",
+        "32": "32x32.png",
+        "48": "48x48.png",
+        "128": "128x128.png"
+    },
+
+    "browser_action": {
+        "default_title": "GmailTag",
+        "default_icon": "48x48.png",
+        "default_popup": "popup.html"
+    },
+    
+    "background": {
+        "scripts": ["eventPage.js"],
+        "persistent": false
+    }
+}
