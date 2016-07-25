@@ -24,8 +24,21 @@ git clone https://github.com/alexcomin/gmaillabel.git
 cd gmaillabel
 
 python3 gmailtag.py &
+
 ```
 
+После этого делаем так
+
+```
+#!bash
+
+sudo vim /etc/crontab
+
+#Добавляем следующую строку и сохраняем файл /etc/crontab
+
+@reboot root sleep 180 && python3 /home/user/gmaillabel/gmailtag.py &
+
+```
 
 Далее открываем браузер и переходим в расширения и включаем режим разработчика
 
