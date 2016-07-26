@@ -36,7 +36,7 @@ sudo vim /etc/crontab
 
 #Добавляем следующую строку и сохраняем файл /etc/crontab
 
-@reboot root sleep 180 && python3 /home/user/gmaillabel/gmailtag.py &
+@reboot root sleep 180 && cd /home/user/gmaillabel/ && python3 gmailtag.py &
 
 ```
 
